@@ -99,7 +99,10 @@ public sealed class Sentence
         return result.ToString();
     }
 
-    private static bool IsOpeningPunctuation(string value) => "([{“.Contains(value);
+    private static bool IsOpeningPunctuation(string value)
+    {
+        return value == "(" || value == "[" || value == "{";
+    }
 
     private static bool IsClosingPunctuation(string value) => ",.;:!?…)]}»”'’".Contains(value);
 }
